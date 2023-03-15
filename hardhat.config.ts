@@ -4,6 +4,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";                    /// Allows for npx hardhat deploy
 import "hardhat-deploy-ethers";             /// Allows for npx hardhat deploy with ethers
 import "hardhat-contract-sizer";            /// Script allows for checking contract sizes
+import "./tasks/mint";
 import dotenv from "dotenv";
 import { ethers } from "ethers";
 

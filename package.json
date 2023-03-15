@@ -24,6 +24,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
     "@skaleproject/pow-ethers": "^0.3.1-1",
     "cli-select": "^1.1.2",
     "dotenv": "^16.0.3"

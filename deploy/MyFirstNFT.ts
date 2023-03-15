@@ -1,6 +1,7 @@
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { retrieveSKALEFuel } from "../utils/sfuel";
+import { MyFirstNFT } from "../config";
 
 const deployFunction: DeployFunction = async function(hre: HardhatRuntimeEnvironment) {
     
@@ -12,15 +13,18 @@ const deployFunction: DeployFunction = async function(hre: HardhatRuntimeEnviron
     const ret = await retrieveSKALEFuel(hre.network.name, deployer, hre);
 
     await deploy(
-        "HardhatTemplate",
+        "MyFirstNFT",
         {
             from: deployer,
             log: true,
-            args: []
+            args: [
+                MyFirstNFT.name,
+                MyFirstNFT.symbol,
+            ]
         }
     );
 }
 
 export default deployFunction;
 
-deployFunction.tags = ["template"];
+deployFunction.tags = ["NFT", "MyFirstNFT"];
