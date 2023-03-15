@@ -1,0 +1,1 @@
+# SKALE Hardhat Template
