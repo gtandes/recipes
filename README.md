@@ -5,7 +5,7 @@
 ### Using NPM
 > Copy the following into your terminal
 ```console
-git clone -b recipe-mint-your-first-nft git@github.com/skalenetwork/recipes && cd recipes && npm install
+git clone -b recipe-mint-your-first-nft https://github.com/skalenetwork/recipes && cd recipes && npm install
 ```
 
 OR
@@ -13,7 +13,7 @@ OR
 ### Using Yarn
 > Copy the following into your terminal
 ```console
-git clone -b recipe-mint-your-first-nft git@github.com/skalenetwork/recipes && cd recipes && yarn
+git clone -b recipe-mint-your-first-nft https://github.com/skalenetwork/recipes && cd recipes && yarn
 ```
 
 ### Dependencies
