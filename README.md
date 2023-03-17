@@ -8,6 +8,16 @@ Checkout the [code](./contracts/HelloSKALE.sol).
 
 Clone this branch by calling the following:
 
+### Using HTTP (Default)
+
+```shell
+git clone -b recipe-hello-skale https://github.com:skalenetwork/recipes.git &&
+cd recipes &&
+touch .env &&
+npm install
+```
+
+### Using SSH
 ```shell
 git clone -b recipe-hello-skale git@github.com:skalenetwork/recipes.git &&
 cd recipes &&
