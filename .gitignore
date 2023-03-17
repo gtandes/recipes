@@ -119,3 +119,6 @@ deployments/chaos-staging-v3
 deployments/europa-staging-v3
 deployments/nebula-staging-v3
 deployments/titan-staging-v3
+
+yarn.lock
+package-lock.json

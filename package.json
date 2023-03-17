@@ -1,5 +1,6 @@
 {
-  "name": "hardhat-project",
+  "name": "recipe-hello-skale",
+  "private": true,
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.0",

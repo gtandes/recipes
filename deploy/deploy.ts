@@ -12,7 +12,7 @@ const deployFunction: DeployFunction = async function(hre: HardhatRuntimeEnviron
     const ret = await retrieveSKALEFuel(hre.network.name, deployer, hre);
 
     await deploy(
-        "HardhatTemplate",
+        "HelloSKALE",
         {
             from: deployer,
             log: true,
@@ -23,4 +23,4 @@ const deployFunction: DeployFunction = async function(hre: HardhatRuntimeEnviron
 
 export default deployFunction;
 
-deployFunction.tags = ["template"];
+deployFunction.tags = ["deploy", "default", "hello", "skale"];
