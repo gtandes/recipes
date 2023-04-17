@@ -1,0 +1,47 @@
+.main {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+}
+
+.title {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
+.center button {
+  width: 50%;
+  padding: 8px 32px;
+}
+
+.poweredBy {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.poweredBy li:hover {
+  color: lightcoral;
+}
+
+.connectButton {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
