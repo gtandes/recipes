@@ -3,11 +3,12 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { skaleChaosTestnet } from 'wagmi/chains';
+import { skaleCalypsoTestnet, skaleChaosTestnet } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
+    skaleCalypsoTestnet,
     skaleChaosTestnet
   ],
   [publicProvider()]
