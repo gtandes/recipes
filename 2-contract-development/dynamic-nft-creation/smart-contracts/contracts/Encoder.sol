@@ -8,11 +8,12 @@ library Encoder {
 
     using Strings for uint256;
 
-    function encodeSVG(string memory _svg) internal pure returns (string memory) {
+    function encodeSVG(bytes memory _svg) internal pure returns (string memory) {
         return string(abi.encodePacked(
             "data:image/svg+xml;base64,",
-            Base64.encode(abi.encodePacked(_svg))
+            Base64.encode(_svg)
         ));
+        // return _svg;
     }
 
     function encodeNFTMetadata(string memory name, string memory description, string memory image) internal pure returns (string memory) {

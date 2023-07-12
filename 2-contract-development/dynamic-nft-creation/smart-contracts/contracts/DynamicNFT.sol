@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "./SVG.sol";
 import "./Encoder.sol";
@@ -41,7 +42,7 @@ contract DynamicNFT is RNG, ERC721, ERC721Enumerable, ERC721URIStorage, AccessCo
             }
         }
 
-        colors[tokenIdCounter.current()] = string(abi.encodePacked(randomNumbers[0], ",", randomNumbers[1], ",", randomNumbers[2]));
+        colors[tokenIdCounter.current()] = string.concat(Strings.toString(randomNumbers[0]), ",", Strings.toString(randomNumbers[1]), ",", Strings.toString(randomNumbers[2]));
         speeds[tokenIdCounter.current()] = [randomNumbers[3], randomNumbers[4], randomNumbers[5]];
     }
 
@@ -63,7 +64,11 @@ contract DynamicNFT is RNG, ERC721, ERC721Enumerable, ERC721URIStorage, AccessCo
         override(ERC721, ERC721URIStorage)
         returns (string memory)
     {
-        return super.tokenURI(tokenId);
+        return Encoder.encodeNFTMetadata(
+            name(),
+            "Dynamic NFT Smart Contract",
+            Encoder.encodeSVG(SVG.load(colors[tokenId], speeds[tokenId]))
+        );
     }
 
     function supportsInterface(bytes4 interfaceId)

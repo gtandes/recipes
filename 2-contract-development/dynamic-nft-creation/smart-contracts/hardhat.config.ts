@@ -1,8 +1,10 @@
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
 import dotenv from "dotenv";
+import "./tasks";
+
 
 /*
  * Allows the script to access process.env
