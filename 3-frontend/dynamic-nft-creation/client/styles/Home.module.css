@@ -1,0 +1,104 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  min-height: 100vh;
+  background: seashell;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.nav {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.connectWallet,
+.title {
+  margin: 0 5%;
+}
+
+.gallery {
+  width: 90%;
+  min-height: calc(100vh - 150px);
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+.item {
+  width: auto;
+  position: relative;
+  height: 300px;
+}
+
+.item img {
+  height: 300px;
+  width: 300px;
+  border-radius: 32px;
+}
+
+.item:nth-child(odd) img {
+  margin: 0 8px;
+}
+
+.mint,
+.loading {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px; 
+}
+
+.mint button,
+.loading button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 2rem;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.mint button:hover {
+  background: black;
+  cursor: pointer;
+}
+
+.loading button {
+  color: #29FF94;
+  border: 1px solid #29FF94;
+  animation-play-state: running;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.mint button {
+  border: 1px solid #00BAFF;
+  color: #00BAFF;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
