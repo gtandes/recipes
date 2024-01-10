@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const {isAddress} = require("ethers");
 const Distribute = require("./distribute");
+const Balance = require("./balance");
 const {json, urlencoded} = require("express");
 
 /**
@@ -33,6 +34,12 @@ app.get("/claim/:address", async(req, res) => {
 	});
 
 
+});
+
+app.get("/balance", async(_, res) => {
+	return res.status(200).send({
+		balance: await Balance()
+	});
 });
 
 
