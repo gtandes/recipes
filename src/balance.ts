@@ -1,16 +1,12 @@
-const { JsonRpcProvider, Wallet } = require("ethers");
-
-const {
-    PRIVATE_KEY,
-    RPC_URL
-} = require("./config");
+import { JsonRpcProvider, Wallet } from "ethers";
+import { PRIVATE_KEY, RPC_URL } from "./config";
 
 const provider = new JsonRpcProvider(RPC_URL);
 const wallet = new Wallet(PRIVATE_KEY, provider);
 
-async function Balance() {
+async function Balance(): Promise<string> {
     const balance = await provider.getBalance(wallet.address);
     return balance.toString(); // Convert BigInt to string
 }
 
-module.exports = Balance;
+export default Balance;
