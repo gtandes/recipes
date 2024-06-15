@@ -1,4 +1,5 @@
 import { JsonRpcProvider, Wallet } from "ethers";
+
 import { DISTRIBUTION_VALUE, PRIVATE_KEY, RPC_URL } from "./config";
 
 const provider = new JsonRpcProvider(RPC_URL);
@@ -9,10 +10,15 @@ interface DistributeParams {
 }
 
 async function Distribute({ address }: DistributeParams) {
-  return await wallet.sendTransaction({
-    to: address,
-    value: DISTRIBUTION_VALUE,
-  });
+  try {
+    return await wallet.sendTransaction({
+      to: address,
+      value: DISTRIBUTION_VALUE,
+    });
+  } catch (error) {
+    console.error("Distribute error:", error);
+    throw error;
+  }
 }
 
 export default Distribute;

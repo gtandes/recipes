@@ -5,7 +5,9 @@ module.exports = {
     {
       name: "SFUEL_distributor_calypso",
       script: "./src/index.ts",
-      watch: true,
+      watch: ["./src", "./src/**/*.ts"],
+      watch_delay: 1000,
+      ignore_watch: ["node_modules", "dist", ".git", "logs"],
       time: true,
       instances: 1,
       autorestart: true,
@@ -20,11 +22,12 @@ module.exports = {
         CHAIN_NAME: "CalypsoTestnet",
       },
     },
-
     {
       name: "SFUEL_distributor_europa",
       script: "./src/index.ts",
-      watch: true,
+      watch: ["./src", "./src/**/*.ts"],
+      watch_delay: 1000,
+      ignore_watch: ["node_modules", "dist", ".git", "logs"],
       time: true,
       instances: 1,
       autorestart: true,
@@ -39,11 +42,12 @@ module.exports = {
         CHAIN_NAME: "EuropaTestnet",
       },
     },
-
     {
       name: "SFUEL_distributor_nebula",
       script: "./src/index.ts",
-      watch: true,
+      watch: ["./src", "./src/**/*.ts"],
+      watch_delay: 1000,
+      ignore_watch: ["node_modules", "dist", ".git", "logs"],
       time: true,
       instances: 1,
       autorestart: true,
@@ -58,11 +62,12 @@ module.exports = {
         CHAIN_NAME: "NebulaTestnet",
       },
     },
-
     {
       name: "SFUEL_distributor_titan",
       script: "./src/index.ts",
-      watch: true,
+      watch: ["./src", "./src/**/*.ts"],
+      watch_delay: 1000,
+      ignore_watch: ["node_modules", "dist", ".git", "logs"],
       time: true,
       instances: 1,
       autorestart: true,
@@ -78,23 +83,4 @@ module.exports = {
       },
     },
   ],
-
-  // deploy: {
-  //   production: {
-  //     user: "SSH_USERNAME",
-  //     host: "SSH_HOSTMACHINE",
-  //     key: "deploy.key",
-  //     ref: "origin/master",
-  //     repo: "GIT_REPOSITORY",
-  //     path: "DESTINATION_PATH",
-  //     "pre-deploy-local": "",
-  //     "post-deploy":
-  //       "npm install && pm2 reload ecosystem.config.js --env production",
-  //     "pre-setup": "",
-  //     env: {
-  //       NODE_ENV: "production",
-  //       DATABASE_ADDRESS: process.env.DATABASE_ADDRESS,
-  //     },
-  //   },
-  // },
 };
