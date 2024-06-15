@@ -5,6 +5,9 @@
   "main": "./src/index.ts",
   "repository": "git@github.com:skalenetwork/recipes.git",
   "author": "TheGreatAxios <sawyer.cutler@gmail.com>",
+  "contributors": [
+    "Greg Thomas Andes <andesgregthomas3@gmail.com>"
+  ],
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -21,10 +24,12 @@
     "@types/helmet": "^4.0.0",
     "@types/node": "^20.14.2",
     "nodemon": "^2.0.22",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "scripts": {
-    "dev": "nodemon --watch ./src/index.js",
-    "start": "node ./src/index.js"
+    "build": "tsc",
+    "start": "pm2 start ecosystem.config.js",
+    "dev": "nodemon --watch ./src/index.ts --exec ts-node ./src/index.ts"
   }
 }
