@@ -95,7 +95,7 @@ app.get(
 app.get("/balance", async (_, res: Response) => {
 	try {
 		const balance = await Balance();
-		return res.status(200).json({ balance });
+		return res.status(200).send({ balance });
 	} catch (error) {
 		const errorMessage = error instanceof Error ? error.message : "Unknown error";
 		return res.status(500).send(`Error obtaining balance: ${errorMessage}`);
