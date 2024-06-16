@@ -3,7 +3,7 @@ import { parseEther } from "ethers";
 
 dotenv.config();
 
-const DISTRIBUTION_VALUE = parseEther("0.1");
+const DISTRIBUTION_VALUE = parseEther("0.000001");
 const PRIVATE_KEY = process.env.PRIVATE_KEY as string;
 const RPC_URL = process.env.RPC_URL as string;
 
