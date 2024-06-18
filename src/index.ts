@@ -56,7 +56,7 @@ app.get("/", (_, res: Response) => {
 // Rate limiting for claim route
 const claimLimiter = rateLimit({
 	windowMs: 1 * 60 * 1000,
-	max: 100,
+	max: 1,
 	message: "Too many requests from this IP, please try again later."
 });
 
